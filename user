@@ -1,0 +1,35 @@
+// ==UserScript==
+// @name        AWS Banner Changer
+// @namespace   http://mikegchambers.com
+// @include     https://console.aws.amazon.com/*
+// @version     1
+// @grant       GM_addStyle
+// ==/UserScript==
+
+var accountName = document.getElementById("awsc-login-display-name-account").innerHTML;
+
+switch(accountName){
+    case "my-prd-acc":
+        colour1 = "red";
+        colour2 = "darkred";
+        break;
+    case 'my-non-prd-acc':
+        colour1 = "green";
+        colour2 = "darkgreen";
+        break;
+    case 'my-billing-acc':
+        colour1 = "orange";
+        colour2 = "darkorange";
+        break;
+    default:
+        colour1 = "blue";
+        colour2 = "darkblue";  
+        break;
+}
+
+menubarStyle = "body #awsgnav #nav-menubar, body #awsgnav #nav-menubar .nav-menu { \
+    background: linear-gradient(to bottom, " + colour1 + " 0px, " + colour2 + " 100%) repeat scroll 0% 0% transparent; \
+    background-size: cover !important;   \
+}"
+
+GM_addStyle ( menubarStyle );
