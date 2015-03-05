@@ -2,6 +2,7 @@
 // @name        AWS Banner Changer
 // @namespace   http://mikegchambers.com
 // @include     https://console.aws.amazon.com/*
+// @include     https://s3-console-us-standard.console.aws.amazon.com/*
 // @version     1
 // @grant       GM_addStyle
 // ==/UserScript==
